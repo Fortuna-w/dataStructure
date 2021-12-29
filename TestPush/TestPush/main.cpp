@@ -2,6 +2,7 @@
 using namespace std;
 
 int main() {
-	cout << "ÎªÊ²Ã´´«ÉÏÈ¥µÄÖ»ÓÐÒ»¸ö.cpp" << endl;
+	cout << "ä¸ºä»€ä¹ˆä¼ ä¸ŠåŽ»çš„åªæœ‰ä¸€ä¸ª.cpp" << endl;
+	cout << "Modify it here!" << endl;
 	return 0;
 }
