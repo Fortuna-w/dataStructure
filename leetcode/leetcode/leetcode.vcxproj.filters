@@ -26,5 +26,11 @@
     <ClInclude Include="53-maxSubArray.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="1-twoSum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="88-merge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
