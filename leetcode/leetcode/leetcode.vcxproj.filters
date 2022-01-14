@@ -32,5 +32,20 @@
     <ClInclude Include="88-merge.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="350-intersect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="121-maxProfit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="566-matrixReshape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="118-generate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="36-isValidSudoku.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

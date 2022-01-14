@@ -127,8 +127,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1-twoSum.h" />
+    <ClInclude Include="118-generate.h" />
+    <ClInclude Include="121-maxProfit.h" />
     <ClInclude Include="217-containsDuplicate.h" />
+    <ClInclude Include="350-intersect.h" />
+    <ClInclude Include="36-isValidSudoku.h" />
     <ClInclude Include="53-maxSubArray.h" />
+    <ClInclude Include="566-matrixReshape.h" />
     <ClInclude Include="88-merge.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
