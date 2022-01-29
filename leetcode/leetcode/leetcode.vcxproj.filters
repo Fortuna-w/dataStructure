@@ -47,5 +47,26 @@
     <ClInclude Include="36-isValidSudoku.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="73-setZeroes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="387-firstUniqChar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="383-canConstruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="242-isAnagram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="141-hasCycle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="21-mergeTwoLists.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="203-removeElements.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
