@@ -1,11 +1,14 @@
 #include<iostream>
 #include<queue>
 #include<vector>
+#include<algorithm>
+
+#include"p103-Ranking.h"
 using namespace std;
 
 void test1() {
 	// 初始化小顶堆
-	priority_queue<int, vector<int>, greater<int>> heap;
+	priority_queue<int, vector<int>, less<int>> heap;   //vs2015的v140好像只有默认less，没有greater
 
 	// 元素入堆
 	heap.push(1);
@@ -48,12 +51,16 @@ void test2() {
 	}
 
 }
+
+
 int main() {
 	
 
-	test1();
+	//test1();
 
-	test2();
+	//test2();
+
+	test_ranking();
 
 	return 0;
 }
