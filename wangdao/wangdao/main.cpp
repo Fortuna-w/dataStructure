@@ -26,6 +26,13 @@ int main() {
 
 	//fun_GCD();
 	//fun_LCM();
-	fun_Judge();
+	//fun_Judge();
+	//func_Judge_2();
+	//func_Judge_3();
+	//func_FastExponentiation();
+	//func_MatrixMultiply();
+	//func_MatrixFastExponentiation();
+	//func_BigAdd();
+	func_BigFactorial();
 	return 0;
 }
