@@ -360,10 +360,10 @@ Matrix Multiply(Matrix x, Matrix y) {
 	return answer;
 }
 //输出矩阵
-void PrintMatrix(Matrix x) {//输出没有结果出来？？？？
+void PrintMatrix(Matrix x) {
 	for (int i = 0; i < x.row; ++i) {
 		for (int j = 0; j < x.col; ++j) {
-			printf("%d", x.matrix[i][j]);
+			printf("%d ", x.matrix[i][j]);
 		}
 		printf("\n");
 	}
@@ -498,7 +498,7 @@ BigInteger::BigInteger() {
 	length = 0;
 }
 
-BigInteger::BigInteger(int x) {
+BigInteger::BigInteger(int x) {//逆序在数组中保存，满足低位的数字从数组序号低位开始
 	memset(digit, 0, sizeof(digit));
 	length = 0;
 	if (x == 0) {
@@ -596,7 +596,7 @@ BigInteger BigInteger::operator+(const BigInteger& b) {
 	int carry = 0;
 	for (int i = 0; i < length || i < b.length; i++) {
 		int current = carry + digit[i] + b.digit[i];
-		carry = current / 10;
+		carry = current / 10;//是否有进位
 		answer.digit[answer.length++] = current % 10;
 	}
 	if (carry != 0) {
@@ -610,7 +610,7 @@ BigInteger BigInteger::operator-(const BigInteger& b) {
 	int carry = 0;
 	for (int i = 0; i < length; i++) {
 		int current = digit[i] - b.digit[i] - carry;
-		if (current < 0) {
+		if (current < 0) {//不够减，需要借位
 			current += 10;
 			carry = 1;
 		}
@@ -619,7 +619,7 @@ BigInteger BigInteger::operator-(const BigInteger& b) {
 		}
 		answer.digit[answer.length++] = current;
 	}
-	while (answer.digit[answer.length] == 0 && answer.length > 1) {
+	while (answer.digit[answer.length-1] == 0 && answer.length > 1) {
 		answer.length--;
 	}
 	return answer;
@@ -628,16 +628,16 @@ BigInteger BigInteger::operator-(const BigInteger& b) {
 BigInteger BigInteger::operator*(const BigInteger& b) {
 	BigInteger answer;
 	answer.length = length + b.length;
-	for (int i = 0; i < length; i++) {
+	for (int i = 0; i < length; i++) {//模拟算术乘法的过程
 		for (int j = 0; j < b.length; j++) {
 			answer.digit[i + j] += digit[i] * b.digit[j];
 		}
 	}
 	for (int i = 0; i < answer.length; i++) {
-		answer.digit[i + 1] += answer.digit[i] / 10;
+		answer.digit[i + 1] += answer.digit[i] / 10;//进位
 		answer.digit[i] %= 10;
 	}
-	while (answer.digit[answer.length] == 0 && answer.length > 1) {
+	while (answer.digit[answer.length-1] == 0 && answer.length > 1) {
 		answer.length--;
 	}
 	return answer;
@@ -645,23 +645,23 @@ BigInteger BigInteger::operator*(const BigInteger& b) {
 
 BigInteger BigInteger::operator/(const BigInteger& b) {
 	BigInteger answer;
-	answer.length = length;
+	answer.length = length;//length初始化为被除数的length
 	BigInteger remainder = 0;
 	BigInteger temp = b;
 	for (int i = length - 1; i >= 0; i--) {
-		if (!(remainder.length == 1 && remainder.digit[0] == 0)) {
+		if (!(remainder.length == 1 && remainder.digit[0] == 0)) {//判断是否有余数
 			for (int j = remainder.length - 1; j >= 0; j--) {
-				remainder.digit[j + 1] = remainder.digit[j];
+				remainder.digit[j + 1] = remainder.digit[j];//移位
 			}
 			remainder.length++;
 		}
 		remainder.digit[0] = digit[i];
-		while (temp <= remainder) {
+		while (temp <= remainder) {//是否够除
 			remainder = remainder - temp;
 			answer.digit[i]++;
 		}
 	}
-	while (answer.digit[answer.length] == 0 && answer.length > 1) {
+	while (answer.digit[answer.length-1] == 0 && answer.length > 1) {
 		answer.length--;
 	}
 	return answer;
@@ -700,5 +700,45 @@ void func_BigFactorial() {
 			answer = answer * BigInteger(i);
 		}
 		cout << answer << endl;
+	}
+}
+
+//数字阶梯求和
+/*
+	给定a和n，求a+aa+...+aa...a
+*/
+void func_BigAdd1() {
+	int n;
+	BigInteger a;
+	while (cin >> a >> n) {
+		BigInteger temp(0);
+		BigInteger answer(0);
+		for (int i = 0; i < n; i++) {
+			temp = temp * 10 + a;
+			answer = answer + temp;
+		}
+		cout << answer << endl;
+	}
+}
+
+void func_chufa() {
+	BigInteger a, b;
+	cin >> a >> b;
+	cout << a / b << endl;
+	cout << a % b << endl;
+}
+
+//大整数的因子
+/*
+	已知正整数k满足2<=k<=9，现给出长度最大为30位的十进制非负整数c，求所有能整除c的k
+*/
+void func_BigFactor() {
+	BigInteger c;
+	while (cin >> c) {
+		for (int i = 2; i <= 9; i++) {
+			if (c%i == 0) {
+				printf("%d\n", i);
+			}
+		}
 	}
 }

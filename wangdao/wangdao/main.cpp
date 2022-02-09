@@ -32,7 +32,11 @@ int main() {
 	//func_FastExponentiation();
 	//func_MatrixMultiply();
 	//func_MatrixFastExponentiation();
+
 	//func_BigAdd();
-	func_BigFactorial();
+	//func_BigFactorial();
+	//func_BigAdd1();
+	//func_chufa();
+	func_BigFactor();
 	return 0;
 }
