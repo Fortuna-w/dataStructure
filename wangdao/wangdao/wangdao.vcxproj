@@ -129,6 +129,7 @@
     <ClInclude Include="KMP.h" />
     <ClInclude Include="moni.h" />
     <ClInclude Include="shuxue.h" />
+    <ClInclude Include="tanxin.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

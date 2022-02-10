@@ -3,6 +3,7 @@
 #include"KMP.h"
 #include"biaodashiqiuzhi.h"
 #include"shuxue.h"
+#include"tanxin.h"
 
 #include<iostream>
 
@@ -37,6 +38,10 @@ int main() {
 	//func_BigFactorial();
 	//func_BigAdd1();
 	//func_chufa();
-	func_BigFactor();
+	//func_BigFactor();
+
+	//func_RJ();
+	//func_FMT();
+	func_SG();
 	return 0;
 }
